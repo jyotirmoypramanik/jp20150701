@@ -32,7 +32,7 @@ Public Class DBUsersGenClass
             MainInvoked = value
         End Set
     End Property
-
+  
     Sub CheckDBVersion()
         'MainCounter to Track New Instance or Existing Instance of the App
 

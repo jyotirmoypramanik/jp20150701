@@ -8,8 +8,7 @@ Public Class frmLogin
     ' where CustomPrincipal is the IPrincipal implementation used to perform authentication. 
     ' Subsequently, My.User will return identity information encapsulated in the CustomPrincipal object
     ' such as the username, display name, etc.
-    Public Shared appdbconn As DBOra.db
-    Public odbconn As Odbc.OdbcConnection
+     Public odbconn As Odbc.OdbcConnection
     Dim MyConn As DBUsersGenClass
     Dim varuser As String
     Dim varpwd As String
@@ -21,12 +20,12 @@ Public Class frmLogin
             varpwd = Me.PasswordTextBox.Text
             Dim retsts As Integer = checkappuser(odbconn, varuser, varpwd)
             If retsts = 1 Then
-                MsgBox("Login Sucessfull")
+                'MsgBox("Login Sucessfull")
                 MyConn = New DBUsersGenClass
                 MyConn.CheckDBVersion()
 
             Else
-                MsgBox("Login Not Sucessfull")
+                MsgBox("Database Login Not Sucessfull, Please review the database configuration file - dbconn.xml")
             End If
         End If
     End Sub
@@ -54,6 +53,7 @@ Public Class frmLogin
             MsgBox("DB Connection sucessfull")
 #End If
         End If
+        'Associating DB appdbconn with odbconn
         odbconn = appdbconn.getDBConn
         'If appdbconn.ConnStatus() = True Then
         '    MsgBox("Connected")
