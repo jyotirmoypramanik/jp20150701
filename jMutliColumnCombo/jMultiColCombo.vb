@@ -14,6 +14,10 @@ Public Class jMultiColCombo
         'SetStyle(ControlStyles.UserPaint, True)
         'SetStyle(ControlStyles.AllPaintingInWmPaint, True)
         'SetStyle(ControlStyles.DoubleBuffer, True)
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+
     End Sub
 
 
